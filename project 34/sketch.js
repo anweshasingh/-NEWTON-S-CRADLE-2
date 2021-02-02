@@ -16,7 +16,7 @@ function setup() {
 	let canvasmouse = Mouse.create(canvas.elt);
 	canvasmouse.pixelRatio = pixelDensity();
 	let options = {
-		mouse: canvas,mouse
+		mouse: canvasmouse;
 	}
 	mConstraint = MouseConstraint.create(engine, options);
 	World.add(world, mConstraint);
