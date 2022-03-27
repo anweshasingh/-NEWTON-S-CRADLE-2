@@ -4,19 +4,22 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
+const Mouse=Matter.Mouse; 
+const MouseConstraint = Matter.MouseConstraint; 
+
 var rope1, rope2, rope3, rope4, rope5;
 var bobObject1, bobObject2, bobObject3, bobObject4, bobObject5;
 var roof;
 
 function setup() {
-	canvas = createCanvas(windowWidth/2, windowHeoght/1.5);
+	canvas = createCanvas(windowWidth/2, windowHeight/1.5);
 	engine = Engine.create();
 	world = engine.world;
 
 	let canvasmouse = Mouse.create(canvas.elt);
 	canvasmouse.pixelRatio = pixelDensity();
 	let options = {
-		mouse: canvasmouse;
+		mouse: canvas,mouse
 	}
 	mConstraint = MouseConstraint.create(engine, options);
 	World.add(world, mConstraint);
