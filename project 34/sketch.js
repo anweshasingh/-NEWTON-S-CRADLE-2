@@ -19,7 +19,7 @@ function setup() {
 	let canvasmouse = Mouse.create(canvas.elt);
 	canvasmouse.pixelRatio = pixelDensity();
 	let options = {
-		mouse: canvas,mouse
+		mouse: canvasmouse
 	}
 	mConstraint = MouseConstraint.create(engine, options);
 	World.add(world, mConstraint);
@@ -72,5 +72,5 @@ function keyPressed() {
 }
 
 function mouseDragged() {
-	Matter.Body.setPosition(pendulum.body, {x: mouseX, y:mouseY});
+	Matter.Body.setPosition( bobObject1.body, {x: mouseX, y:mouseY});
 }
